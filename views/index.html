@@ -1,0 +1,22 @@
+<html>
+<head>
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/static/js/app.js"></script>
+</head>
+<body>
+
+<input type="text" id="chat-field">
+<div id="chat-test">
+</div>
+<script>
+    var socket = io.connect();
+    socket.emit('test', 'connected');
+    socket.on('response', function(data) {
+        console.log('this is a sanity ' + data);
+    })
+</script>
+<div>This is our socket.html file</div>
+</body>
+</html>
